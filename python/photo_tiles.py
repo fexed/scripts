@@ -17,7 +17,7 @@ image_width = grid_width * (cell_width + padding) + label_padding
 image_height = grid_height * (cell_height + padding) + label_padding
 
 # Initialize a blank image
-image = Image.new("RGB", (image_width, image_height), "white")
+image = Image.new("RGBA", (image_width, image_height), "#FFFFFF00")
 draw = ImageDraw.Draw(image)
 
 # Hard-coded data source (year/month;number)
@@ -84,11 +84,12 @@ def parse_data(data):
 # Function to map a value to a color
 def value_to_color(value):
     if value == 0:
-        return "lightgrey"
+        return "#FFFFFF00"
     else:
         # Map the value to a light shade of blue proportional to the value
         blue = int(255 - (value / maximum) * 255)  # Adjust the range for shading
-        return f"#{blue:02x}{blue:02x}FF"
+        alpha = int(100 + (value / maximum) * 155)  # Adjust the range for shading
+        return f"#{blue:02x}{blue:02x}FF{alpha:02x}"
 
 # Parse the data
 contributions = parse_data(data)
@@ -97,12 +98,12 @@ maximum = max(contributions.values())
 # Add year labels on the left with padding
 for year in range(start_year, current_year + 1):
     y = year - start_year
-    draw.text((2, y * (cell_height + padding) + cell_height + 5 // 2 + 5), str(year), fill="grey")
+    draw.text((2, y * (cell_height + padding) + cell_height + 5 // 2 + 5), str(year), fill="white")
 
 # Add month labels at the top with padding
 for month in range(1, months_per_year + 1):
     x = month - 1
-    draw.text((x * (cell_width + padding) + cell_width // 2 + label_padding, 2), datetime.date(1900, month, 1).strftime("%B")[:3], fill="grey")
+    draw.text((x * (cell_width + padding) + cell_width // 2 + label_padding, 2), datetime.date(1900, month, 1).strftime("%B")[:3], fill="white")
 
 # Draw the contribution grid
 for year in range(start_year, current_year + 1):
