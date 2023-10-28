@@ -28,7 +28,7 @@ I use this in a more CSV format, import to a spreadsheet and make some graphs
 
 - [photohandler.py](https://github.com/fexed/scripts/blob/main/python/photohandler.py) runs each time I send a photo to my Telegram bot, placing it in my photo directory tree in the right folder. For example, a photo named `PXL_20231026_105444.jpg` will be placed inside `photos/2023/10_Ottobre/20231026/`
 - [photo_tiles.py](https://github.com/fexed/scripts/blob/main/python/photo_tiles.py) produces a grid of tiles like GitHub's contributions per month, based on an hardcoded dataset. Example below
-![photos](https://github.com/fexed/scripts/assets/5090316/99a6586c-d9fb-4a34-b594-a884a95b383e)
+![photos](https://github.com/fexed/scripts/assets/5090316/ea14e053-6303-4566-aa14-1aaaf0c173f7)
 - [piwigo/piwigo_fixer.py](https://github.com/fexed/scripts/blob/main/python/piwigo/piwigo_fixer.py) fixes the missing creation dates of my piwigo database, filling with the date corresponding to the parent folder. E.g., the previous photo would be assigned a creation date of October 26, 2023.
 - [piwigo/piwigo_howmanywithouttag.py](https://github.com/fexed/scripts/blob/main/python/piwigo/piwigo_howmanywithouttag.py) prints the number of photos in my piwigo database that have no tag
 - [piwigo/piwigo_randomwithouttag.py](https://github.com/fexed/scripts/blob/main/python/piwigo/piwigo_randomwithouttag.py) prints the absolute path of a photo with no tag from my piwigo database
