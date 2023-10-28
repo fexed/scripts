@@ -120,8 +120,8 @@ for year in range(start_year, current_year + 1):
                 square_y = label_padding + y * (cell_height + padding)
                 draw.rectangle(
                     [(square_x, square_y), (square_x + cell_width, square_y + cell_height)],
-                    fill=color,
-            )
+                    fill=color,)
+                draw.text((square_x + 15, square_y + 3), str(count), fill="lightgrey")
 
 # Save the image
 image.save("photos.png")
