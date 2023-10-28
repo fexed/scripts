@@ -88,8 +88,8 @@ def value_to_color(value):
     else:
         # Map the value to a light shade of blue proportional to the value
         blue = int(255 - (value / maximum) * 255)  # Adjust the range for shading
-        alpha = int(100 + (value / maximum) * 155)  # Adjust the range for shading
-        return f"#{blue:02x}{blue:02x}FF{alpha:02x}"
+        alpha = int(50 + (value / maximum) * 205)  # Adjust the range for shading
+        return f"#5555AA{alpha:02x}"
 
 # Parse the data
 contributions = parse_data(data)
